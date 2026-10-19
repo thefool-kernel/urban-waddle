@@ -48,7 +48,7 @@
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 <meta http-equiv="X-Frame-Options" content="DENY">
 <meta http-equiv="X-XSS-Protection" content="1; mode=block">
-<meta name="format-detection" content="telephone=no,email=no,address=no">
+<meta name="format-detection" content="telephone=yes"> <!-- Alterado para yes para permitir clique no mobile -->
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#f7f3ec">
 
@@ -141,6 +141,7 @@
       "url": "https://saopaulobens.com.br/",
       "logo": {"@type":"ImageObject","url":"https://saopaulobens.com.br/logo.png","width":512,"height":512},
       "description": "Correspondente bancário online especializado em consórcio e soluções para capital de giro.",
+      "telephone": "+55-11-5280-7694",
       "sameAs": [
         "https://www.facebook.com/saopaulobens",
         "https://www.instagram.com/saopaulobens",
@@ -148,6 +149,7 @@
       ],
       "contactPoint": {
         "@type": "ContactPoint",
+        "telephone": "+55-11-5280-7694",
         "contactType": "customer service",
         "availableLanguage": ["Portuguese","English","Spanish","Chinese"],
         "areaServed": "BR"
@@ -160,6 +162,7 @@
       "url": "https://saopaulobens.com.br/",
       "description": "Consórcio sem juros para imóvel, automóvel, máquinas e soluções para capital de giro.",
       "areaServed": {"@type":"Country","name":"Brasil"},
+      "telephone": "+55-11-5280-7694",
       "serviceType": [
         "Consórcio de Imóvel",
         "Consórcio de Automóvel",
@@ -1497,6 +1500,8 @@ html.theme-transition *::after{
       <div>
         <h3 data-i18n="footer.contact">Contato</h3>
         <ul role="list">
+          <!-- Telefone visível adicionado -->
+          <li><a href="tel:+551152807694">+55 (11) 5280-7694</a></li>
           <li><a class="js-wa" href="#" target="_blank" rel="noopener noreferrer nofollow" data-i18n="footer.contact.wa">WhatsApp</a></li>
           <li><a href="#duvidas" data-i18n="footer.contact.faq">Dúvidas</a></li>
         </ul>
@@ -1947,7 +1952,9 @@ var OG_LOCALES = {
   var SUPPORTED = ['pt-BR','en','es','zh-CN'];
   var STORAGE_THEME = 'spb-theme';
   var STORAGE_LANG  = 'spb-lang';
-  var WA_NUMBER = '5511999999999';
+  
+  /* NÚMERO REAL DO WHATSAPP (Apenas dígitos) */
+  var WA_NUMBER = '551152807694';
 
   var root = document.documentElement;
   var metaTheme = document.querySelector('meta[name="theme-color"]');
