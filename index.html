@@ -53,8 +53,8 @@
 <meta name="theme-color" content="#f7f3ec">
 
 <!-- FAVICON -->
-<link rel="icon" type="image/png" href="logo.jpeg">
-<link rel="apple-touch-icon" href="logo.jpeg">
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="apple-touch-icon" href="logo.png">
 
 <!-- ============================================================
      TEMA + IDIOMA — aplicados antes da 1ª pintura
@@ -139,7 +139,7 @@
       "name": "PLATAFORMA SAO PAULO BENS",
       "alternateName": "São Paulo Bens",
       "url": "https://saopaulobens.com.br/",
-      "logo": {"@type":"ImageObject","url":"https://saopaulobens.com.br/jpeg.png","width":512,"height":512},
+      "logo": {"@type":"ImageObject","url":"https://saopaulobens.com.br/logo.png","width":512,"height":512},
       "description": "Correspondente bancário online especializado em consórcio e soluções para capital de giro.",
       "sameAs": [
         "https://www.facebook.com/saopaulobens",
@@ -229,7 +229,7 @@
 
   --shell:1180px;
   --gutter:clamp(1.25rem,1rem + 1vw,2rem);
-  --nav-h:4.625rem;
+  --nav-h:6rem; /* Aumentado para acomodar a logo maior */
 
   --ease:cubic-bezier(.22,.61,.36,1);
   --ease-out:cubic-bezier(.16,1,.3,1);
@@ -455,14 +455,14 @@ html.theme-transition *::after{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:.75rem;
+  gap:1rem;
   min-height:var(--nav-h);
   position:relative;
 }
 
 .brand{
   display:inline-flex;align-items:center;gap:.75rem;
-  flex:0 1 auto; /* Permite encolher se necessário */
+  flex:0 1 auto; 
   min-width:0;
   border-radius:var(--radius);
   transition:opacity .22s var(--ease),transform .22s var(--ease);
@@ -471,9 +471,12 @@ html.theme-transition *::after{
   .brand:hover{opacity:.85;transform:translateY(-1px)}
 }
 .brand:active{transform:scale(.98)}
+
+/* --- LOGO PRINCIPAL (Muito maior e legível) --- */
 .brand img {
-  height: 2.75rem;
+  height: clamp(3.5rem, 5.5vw, 4.5rem); /* Desktop até 72px, mobile min 56px */
   width: auto;
+  max-width: 100%;
   object-fit: contain;
 }
 
@@ -755,7 +758,7 @@ html.theme-transition *::after{
   .nav-inner{gap:.5rem}
 
   .brand{flex:0 1 auto;min-width:0}
-  .brand img { height: 2.25rem; }
+  .brand img { height: 2.75rem; } /* Logo segura e legível no mobile */
 
   .nav-tools{gap:.25rem;margin-left:.25rem}
 
@@ -1108,7 +1111,13 @@ html.theme-transition *::after{
 }
 .footer ul a:active{color:var(--orange-deep)}
 .footer .brand{margin-bottom:.5rem}
-.footer .brand img { height: 2.5rem; width: auto; object-fit: contain; }
+
+/* --- LOGO RODAPÉ --- */
+.footer .brand img { 
+  height: 3.5rem; /* 56px, bem legível */
+  width: auto; 
+  object-fit: contain; 
+}
 .footer hr{
   border:0;border-top:1px solid var(--line-ink);
   margin:2.5rem 0 1.25rem;opacity:1;
@@ -1206,7 +1215,7 @@ html.theme-transition *::after{
   <div class="container nav-inner">
 
     <a class="brand" href="#inicio" aria-label="Plataforma São Paulo Bens">
-      <img src="logo.jpeg" alt="Plataforma São Paulo Bens" width="250" height="75" loading="eager" fetchpriority="high">
+      <img src="logo.png" alt="Plataforma São Paulo Bens" loading="eager" fetchpriority="high">
     </a>
 
     <nav class="nav-links" id="navLinks" aria-label="Navegação principal">
@@ -1331,7 +1340,6 @@ html.theme-transition *::after{
         <p class="sec-meta" data-i18n="sec01.meta">Cartas de crédito de R$ 300 mil a R$ 60 milhões, com condições negociadas junto às administradoras parceiras.</p>
       </div>
 
-      <!-- A classe cards--4 foi adicionada para corrigir o layout 2x2 -->
       <div class="cards cards--4">
         <article class="card reveal">
           <p class="num">01 / 04</p>
@@ -1460,7 +1468,7 @@ html.theme-transition *::after{
 
       <div>
         <a class="brand" href="#inicio" aria-label="Plataforma São Paulo Bens">
-          <img src="logo.jpeg" alt="Plataforma São Paulo Bens" width="250" height="75" loading="lazy">
+          <img src="logo.png" alt="Plataforma São Paulo Bens" loading="lazy">
         </a>
         <p style="margin-top:1.25rem;max-width:26rem" data-i18n="footer.desc">Correspondente bancário online especializado em consórcio e soluções para capital de giro. Planejamento sem juros para imóvel, automóvel, máquinas e empresarial.</p>
       </div>
@@ -1512,7 +1520,7 @@ html.theme-transition *::after{
 
 <script>
 /* ============================================================
-   DICIONÁRIO i18n (Sem Energia Solar e Serviços)
+   DICIONÁRIO i18n
    ============================================================ */
 var I18N = {
 
